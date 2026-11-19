@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FinSight</title>
+<meta name="description" content="Dashboard penjualan dan stok dengan impor CSV, tanya-jawab atas data, dan laporan siap cetak. Open source.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css"></head><body><div class="page">
+<header class="mast"><h1>FinSight</h1><p>Laporan penjualan dan persediaan. Data contoh: toko kopi dan perlengkapan, Januari sampai Desember 2026 (sintetis).</p>
+<div class="tools"><label class="file">Impor CSV<input type="file" id="csv" accept=".csv"></label><button class="quiet" id="tpl" type="button">Unduh templat</button><button id="pdf" type="button">Cetak atau simpan PDF</button><a href="https://github.com/Arilsaputra854/finsight" style="align-self:center;font-size:13px">Kode sumber</a></div></header>
+<div id="msg" role="status"></div>
+<section class="figures" id="fig" aria-label="Angka utama"></section>
+<div class="two">
+<section class="sec"><h2>Pendapatan dan laba per bulan</h2><p class="q">Apakah pendapatan tumbuh, dan apakah laba ikut tumbuh?</p><div id="c1"></div>
+<div class="legend"><span><i style="background:var(--green)"></i>Pendapatan</span><span><i style="background:var(--gold)"></i>Laba</span></div></section>
+<section class="sec"><h2>Margin per produk</h2><p class="q">Produk mana yang menjual banyak tetapi untungnya tipis?</p><div id="c2"></div></section></div>
+<div class="two" style="border-top:1px solid var(--rule)">
+<section class="sec"><h2>Stok di bawah batas pesan ulang</h2><p class="q">Barang yang harus dipesan sekarang.</p><div id="stock"></div></section>
+<section class="sec"><h2>Tanya data</h2><p class="q">Pertanyaan dijawab dari tabel di halaman ini. Pencocokan memakai aturan kata kunci, bukan model bahasa.</p>
+<form class="ask" id="f"><label for="q" style="position:absolute;left:-9999px">Pertanyaan</label><input type="text" id="q" placeholder="Produk apa yang paling rugi bulan lalu?"><button>Tanya</button></form>
+<div class="chips" id="chips"></div><div id="ans" aria-live="polite"></div></section></div>
+</div><script type="module" src="app.js"></script></body></html>

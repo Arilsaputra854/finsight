@@ -1,0 +1,11 @@
+{
+  "name": "finsight",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\"",
+    "serve": "npx serve ."
+  }
+}
